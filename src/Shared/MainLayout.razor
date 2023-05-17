@@ -3,10 +3,15 @@
 <PageTitle>Blazor_FluentUI</PageTitle>
 
 <div class="container">
-        <div class="siteheader">
-            <a href="/">Home</a>
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
+    <div class="siteheader">
+        <a href="/">Home</a>
+        <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        @*<FluentSwitch @bind-Value="@_inDarkMode" @onchange=SwitchTheme title="Switch theme">
+            <span class="label">Theme</span>
+            <span slot="unchecked-message">light</span>
+            <span slot="checked-message">dark</span>
+        </FluentSwitch>*@
+    </div>
         <div class="main">
             <div class="navigation">
                 <NavMenu />
@@ -29,3 +34,31 @@
             </div>
         </div>
     </div>
+
+@*@code {
+    StandardLuminance baseLayerLuminance = StandardLuminance.LightMode;
+    private bool _inDarkMode;
+    ElementReference container;
+    //private IJSObjectReference? _jsModule;
+
+    //protected override async Task OnAfterRenderAsync(bool firstRender)
+    //{
+    //    _inDarkMode = await _jsModule!.InvokeAsync<bool>("isDarkMode");
+    //}
+
+    public async void SwitchTheme()
+    {
+        await Task.Delay(50);
+
+        if (_inDarkMode)
+            baseLayerLuminance = StandardLuminance.DarkMode;
+        else
+            baseLayerLuminance = StandardLuminance.LightMode;
+
+        await BaseLayerLuminance.SetValueFor(container, baseLayerLuminance.GetLuminanceValue());
+
+        GlobalState.SetLuminance(baseLayerLuminance);
+
+        //await _jsModule!.InvokeVoidAsync("switchHighlightStyle", baseLayerLuminance == StandardLuminance.DarkMode);
+    }
+}*@
