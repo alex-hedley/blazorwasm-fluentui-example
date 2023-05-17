@@ -45,3 +45,18 @@ fluent-badge {
     width: 600px;
     height: 300px
 }*/
+
+/*
+// -----------------------------------
+// Skeleton
+// -----------------------------------
+*/
+
+fluent-card {
+    --card-width: 500px;
+    --card-height: auto;
+}
+
+.card-padding {
+    padding: 20px;
+}
