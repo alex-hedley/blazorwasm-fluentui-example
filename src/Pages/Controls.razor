@@ -60,6 +60,11 @@
     }
 </ul>
 
+<hr />
+
+<p>With a label: </p>
+<FluentCheckbox @bind-Value=value2>label</FluentCheckbox>
+
 @code {
     // -----------------------------------
     // Accordion
@@ -76,7 +81,6 @@
     // -----------------------------------
     // Calendar
     // -----------------------------------
-
     static int currentYear = DateTime.Now.Year;
     static int currentMonth = DateTime.Now.Month;
 
@@ -94,4 +98,9 @@
             selectedDates.Add(new DateOnly(currentYear, currentMonth, random.Next(1, daysInMonth)));
         };
     }
+
+    // -----------------------------------
+    // Checkbox
+    // -----------------------------------
+    bool value2 = true;
 }
