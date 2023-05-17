@@ -1,5 +1,7 @@
 ﻿@page "/controls"
 
+@*@inject DataSource Data*@
+
 <PageTitle>Controls</PageTitle>
 
 <h1>Controls</h1>
@@ -65,6 +67,14 @@
 <p>With a label: </p>
 <FluentCheckbox @bind-Value=value2>label</FluentCheckbox>
 
+<hr />
+
+@*<h4>With Placeholder</h4>
+<FluentCombobox Placeholder="Please select a size" Items="@Data.Sizes" @bind-Value="@size" />
+<p>
+    Selected size: @size
+</p>*@
+
 @code {
     // -----------------------------------
     // Accordion
@@ -103,4 +113,10 @@
     // Checkbox
     // -----------------------------------
     bool value2 = true;
+
+    //// -----------------------------------
+    //// Combobox
+    //// -----------------------------------
+    //string? name = "Nur Sari";
+    //string? size = "";
 }
