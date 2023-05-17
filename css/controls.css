@@ -1,4 +1,10 @@
-﻿/*::deep > fluent-badge {
+﻿/*
+// -----------------------------------
+// Badge
+// -----------------------------------
+*/
+
+/*::deep > fluent-badge {
     --badge-fill-highlight: #ffd800;
     --badge-fill-lowlight: #333;
     --badge-color-highlight: #000;
@@ -10,4 +16,47 @@ fluent-badge {
     --badge-fill-lowlight: #333;
     --badge-color-highlight: #000;
     --badge-color-lowlight: #fff;
+}
+
+/*
+// -----------------------------------
+// Card
+// -----------------------------------
+*/
+
+/*::deep > .both-gradient {
+    --scroll-fade-next: var(--fill-color);
+    --scroll-fade-previous: var(--fill-color)
+}*/
+
+/*.both-gradient {
+    --scroll-fade-next: var(--fill-color);
+    --scroll-fade-previous: var(--fill-color)
+}*/
+
+/*::deep .full-width,
+::deep .full-width fluent-card {
+    width: 600px;
+    height: 300px
+}*/
+
+/*.full-width,
+.full-width fluent-card {
+    width: 600px;
+    height: 300px
+}*/
+
+/*
+// -----------------------------------
+// Skeleton
+// -----------------------------------
+*/
+
+fluent-card {
+    --card-width: 500px;
+    --card-height: auto;
+}
+
+.card-padding {
+    padding: 20px;
 }
