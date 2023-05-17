@@ -20,7 +20,7 @@
     </FluentBreadcrumbItem>
 </FluentBreadcrumb>
 
-<hr />
+<FluentDivider></FluentDivider>
 
 <FluentAccordion ActiveId="@activeId" OnAccordionItemChange="HandleOnAccordionItemChange">
     <FluentAccordionItem Heading="Panel one">
@@ -40,7 +40,7 @@
 
 <p>Last changed accordion item: @changed?.Heading</p>
 
-<hr />
+<FluentDivider></FluentDivider>
 
 <div>
     <FluentBadge Fill="highlight" Color="highlight">
@@ -61,12 +61,12 @@
     }
 </ul>
 
-<hr />
+<FluentDivider></FluentDivider>
 
 <p>With a label: </p>
 <FluentCheckbox @bind-Value=value2>label</FluentCheckbox>
 
-<hr />
+<FluentDivider></FluentDivider>
 
 @*<h4>With Placeholder</h4>
     <FluentCombobox Placeholder="Please select a size" Items="@Data.Sizes" @bind-Value="@size" />
