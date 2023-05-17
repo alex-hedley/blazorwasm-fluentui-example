@@ -62,4 +62,57 @@
     </FluentButton>
 </CounterBadge>
 
+@code {}
+
+<FluentDivider />
+
+@*
+    // -----------------------------------
+    // MonacoEditor
+    // -----------------------------------
+*@
+
+<h2>MonacoEditor</h2>
+
+@* Remember to replace the namespace below with your own project's namespace. *@
+@* @namespace FluentUI.Demo.Shared *@
+
+@inherits FluentComponentBase
+<Stack>
+    <FluentSelect TOption="string" @bind-SelectedOption="@Language">
+        <FluentOption>C#</FluentOption>
+        <FluentOption>JavaScript</FluentOption>
+        <FluentOption>Json</FluentOption>
+        <FluentOption>Razor</FluentOption>
+    </FluentSelect>
+    <FluentSwitch @bind-Value="@IsDarkMode">Dark Theme</FluentSwitch>
+</Stack>
+<br />
+<MonacoEditor Value="@Code" Language="@Language" IsDarkMode="@IsDarkMode" />
+
+<b>Language:</b> @Language; <b>Code:</b> @Code; <b>IsDarkMode:</b> @IsDarkMode
+<br />
+<br />
+<b>Code:</b> <pre style="border: solid 1px lightgray;">@Code</pre>
+
+@code {
+    private string Display_CSharp = "csharp";
+    private string Display_JavaScript = "javascript";
+    private string Display_Json = "json";
+    private string Display_Razor = "razor";
+
+    private string Language = "csharp";
+
+    private bool IsDarkMode = true;
+
+    private string Code = @"
+using System;
+
+void Main()
+{
+    Console.WriteLine(""Hello World"");
+}
+";
+}
+
 <FluentDivider />
