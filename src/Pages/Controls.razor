@@ -172,6 +172,9 @@
     // Dialog
     // -----------------------------------
 *@
+
+<h2>Dialog</h2>
+
 <div>
     <p>
         When 'Modal' is checked, the dialog can be <em>dismissed</em> by clicking outside of the dialog (anywhere on the overlay). When unchecked,
@@ -242,9 +245,11 @@
 
 @*
     // -----------------------------------
-    // Emojis
+    // Emoji
     // -----------------------------------
 *@
+
+<h2>Emoji</h2>
 
 <FluentEmoji Name="@FluentEmojis.Hamburger" EmojiStyle="EmojiStyle.Color" Size=@EmojiSize.Size32 />
 
@@ -258,6 +263,8 @@
     // Flipper
     // -----------------------------------
 *@
+
+<h2>Flipper</h2>
 
 <FluentFlipper Direction="FlipperDirection.Previous">
     <FluentIcon Name="@FluentIcons.ArrowCircleLeft" Slot="previous" Size="@IconSize.Size16" Variant=IconVariant.Filled Color=Color.Neutral />
@@ -277,6 +284,8 @@
     // Horizontal Scroll
     // -----------------------------------
 *@
+
+<h2>Horizontal Scroll</h2>
 
 @*
     <FluentHorizontalScroll class="both-gradient" Speed="600" Easing="ScrollEasing.EaseInOut">
@@ -326,6 +335,9 @@
     // Icon
     // -----------------------------------
 *@
+
+<h2>Icon</h2>
+
 <FluentIcon Name="@FluentIcons.Alert" Size="IconSize.Size48" Variant=IconVariant.Filled Color="Color.Neutral" />
 
 @code {
@@ -338,6 +350,8 @@
     // Listbox
     // -----------------------------------
 *@
+
+<h2>Listbox</h2>
 
 <FluentListbox TOption="string" ValueChanged="@(e => listboxValue = e)">
     <FluentOption>This option has no value</FluentOption>
@@ -360,3 +374,54 @@
     string? listboxValue = "Item 4";
 }
 
+@*
+    // -----------------------------------
+    // Menu
+    // -----------------------------------
+*@
+
+<h2>Menu</h2>
+
+<FluentMenu>
+    <FluentMenuItem>Menu item 1</FluentMenuItem>
+    <FluentMenuItem>Menu item 2</FluentMenuItem>
+    <FluentMenuItem>Menu item 3</FluentMenuItem>
+    <FluentDivider></FluentDivider>
+    <FluentMenuItem Role="MenuItemRole.MenuItemCheckbox">Checkbox 1</FluentMenuItem>
+    <FluentMenuItem Role="MenuItemRole.MenuItemCheckbox">
+        Checkbox 2
+        <FluentIcon Name="@FluentIcons.Globe" Slot="checkbox-indicator" Size="@IconSize.Size16" Color=Color.Neutral />
+    </FluentMenuItem>
+    <FluentDivider></FluentDivider>
+    <FluentMenuItem Role="MenuItemRole.MenuItemRadio">Radio 1.1</FluentMenuItem>
+    <FluentMenuItem Role="MenuItemRole.MenuItemRadio">Radio 1.2</FluentMenuItem>
+</FluentMenu>
+
+<FluentMenu>
+    <FluentMenuItem>
+        Menu item 1
+        <FluentMenu slot="submenu">
+            <FluentMenuItem>Menu item 1.1</FluentMenuItem>
+            <FluentMenuItem>Menu item 1.2</FluentMenuItem>
+            <FluentMenuItem>Menu item 1.3</FluentMenuItem>
+        </FluentMenu>
+    </FluentMenuItem>
+    <FluentMenuItem>
+        Menu item 2
+        <FluentMenu slot="submenu">
+            <FluentMenuItem>Menu item 2.1</FluentMenuItem>
+            <FluentMenuItem>Menu item 2.2</FluentMenuItem>
+            <FluentMenuItem>Menu item 2.3</FluentMenuItem>
+        </FluentMenu>
+    </FluentMenuItem>
+    <FluentMenuItem>
+        Menu item 3
+        <FluentMenu slot="submenu">
+            <FluentMenuItem>Menu item 3.1</FluentMenuItem>
+            <FluentMenuItem>Menu item 3.2</FluentMenuItem>
+            <FluentMenuItem>Menu item 3.3</FluentMenuItem>
+        </FluentMenu>
+    </FluentMenuItem>
+</FluentMenu>
+
+<FluentDivider />
