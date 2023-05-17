@@ -541,4 +541,42 @@
     string? value;
 }
 
+<FluentDivider />
+
+@*
+    // -----------------------------------
+    // Select
+    // -----------------------------------
+*@
+
+<h2>Select</h2>
+
+<FluentSelect ValueChanged="@(e => selectValue2 = e)" TOption="string">
+    <FluentOption Value="1">
+        Search
+        <FluentIcon Name="@FluentIcons.Search" Slot="start" Size="IconSize.Size20" Color="Color.Neutral" />
+    </FluentOption>
+    <FluentOption Value="2" Selected="true">
+        Show
+        <FluentIcon Name="@FluentIcons.AppsList" Slot="start" Size="IconSize.Size20" Color="Color.Neutral" />
+    </FluentOption>
+    <FluentOption Value="3">
+        Generate
+        <FluentIcon Name="@FluentIcons.Code" Slot="start" Size="IconSize.Size20" Color="Color.Neutral" />
+    </FluentOption>
+    <FluentOption Value="4">
+        Update
+        <FluentIcon Name="@FluentIcons.ArrowSync" Slot="start" Size="IconSize.Size20" Color="Color.Neutral" />
+    </FluentOption>
+    <FluentOption Value="4">
+        About
+        <FluentIcon Name="@FluentIcons.Info" Slot="start" Size="IconSize.Size20" Color="Color.Neutral" />
+    </FluentOption>
+
+</FluentSelect>
+
+@code {
+    string? selectValue2;
+}
+
 <br />
