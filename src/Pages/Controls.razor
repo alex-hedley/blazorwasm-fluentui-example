@@ -121,9 +121,9 @@
 }
 
 @*
-// -----------------------------------
-// Dialog
-// -----------------------------------
+    // -----------------------------------
+    // Dialog
+    // -----------------------------------
 *@
 <div>
     <p>
@@ -194,3 +194,13 @@
 <FluentDivider></FluentDivider>
 
 <FluentEmoji Name="@FluentEmojis.Hamburger" EmojiStyle="EmojiStyle.Color" Size=@EmojiSize.Size32 />
+
+<FluentDivider></FluentDivider>
+
+<FluentFlipper Direction="FlipperDirection.Previous">
+    <FluentIcon Name="@FluentIcons.ArrowCircleLeft" Slot="previous" Size="@IconSize.Size16" Variant=IconVariant.Filled Color=Color.Neutral />
+</FluentFlipper>
+
+<FluentFlipper Direction="FlipperDirection.Next">
+    <FluentIcon Name="@FluentIcons.ArrowCircleRight" Slot="next" Size="@IconSize.Size16" Variant=IconVariant.Filled Color=Color.Neutral />
+</FluentFlipper>
