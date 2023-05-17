@@ -424,6 +424,9 @@
     </FluentMenuItem>
 </FluentMenu>
 
+@code {
+}
+
 <FluentDivider />
 
 @*
@@ -439,6 +442,8 @@
 @code {
     int? value1 = 1;
 }
+
+<FluentDivider />
 
 @*
     // -----------------------------------
@@ -463,3 +468,65 @@
         This option has an icon in its end slot.
     </FluentOption>
 </FluentSelect>
+
+@code {
+}
+
+<FluentDivider />
+
+@*
+    // -----------------------------------
+    // Progress
+    // -----------------------------------
+*@
+
+<h2>Progress</h2>
+
+<FluentProgress></FluentProgress>
+
+@code {
+}
+
+<FluentDivider />
+
+@*
+    // -----------------------------------
+    // ProgressRing
+    // -----------------------------------
+*@
+
+<h2>ProgressRing</h2>
+
+<FluentProgressRing></FluentProgressRing>
+
+@code {
+}
+
+<FluentDivider />
+
+
+
+@*
+    // -----------------------------------
+    // RadioGroup / Radio
+    // -----------------------------------
+*@
+
+<h2>RadioGroup / Radio</h2>
+
+<FluentRadioGroup @bind-Value="pilot" Name="best-pilot">
+    <label id="label4" slot="label">Preset selected-value</label>
+    <FluentRadio Value="@("ice-man")">Ice Man</FluentRadio>
+    <FluentRadio Value="@("maverick")">Maverick</FluentRadio>
+    <FluentRadio Value="@("viper")">Viper</FluentRadio>
+    <FluentRadio Value="@("jester")">Jester</FluentRadio>
+</FluentRadioGroup>
+<p>The best pilot according to you is: @pilot!</p>
+
+@code {
+    string? pilot = "maverick";
+}
+
+<FluentDivider />
+
+<br />
