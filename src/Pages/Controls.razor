@@ -651,4 +651,44 @@
 
 <FluentDivider />
 
+@*
+    // -----------------------------------
+    // Tab
+    // -----------------------------------
+*@
+
+<h2>Tab</h2>
+
+<FluentTabs ActiveId="@activeid" OnTabChange="HandleOnTabChange">
+    <FluentTab Text="Tab one"></FluentTab>
+    <FluentTab Text="Tab two" />
+    <FluentTab Text="Tab three" />
+    <FluentTabPanel>
+        Tab one content. This is for testing.
+    </FluentTabPanel>
+    <FluentTabPanel>
+        Tab two content. This is for testing.
+    </FluentTabPanel>
+    <FluentTabPanel>
+        Tab three content. This is for testing.
+    </FluentTabPanel>
+    <div>Testing</div>
+</FluentTabs>
+
+<p>Active tab changed to: @changedto?.Text</p>
+
+<p><FluentIcon Name="@FluentIcons.Warning" Size="@IconSize.Size24" Variant="@IconVariant.Regular" Color="@Color.Warning" />Clicking on tab 2 jumps to 3 first?</p>
+
+@code {
+    string? activeid = "tab-1";
+    FluentTab? changedto;
+
+    private void HandleOnTabChange(FluentTab tab)
+    {
+        changedto = tab;
+    }
+}
+
+<FluentDivider />
+
 <br />
