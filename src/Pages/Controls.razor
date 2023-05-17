@@ -620,7 +620,7 @@
 
 <div style="margin-bottom: 60px;">
     <FluentButton style="width: 90px; margin: 10px;" @onclick="() => orientation = (orientation == Orientation.Vertical) ? Orientation.Horizontal : Orientation.Vertical">Toggle orientation</FluentButton>
-    <FluentSlider Orientation="@orientation" Min="0" Max="100" Step="10" @bind-Value=value>
+    <FluentSlider Orientation="@orientation" Min="0" Max="100" Step="10" @bind-Value=value3>
         <FluentSliderLabel Position="0">0&#8451;</FluentSliderLabel>
         <FluentSliderLabel Position="10">10&#8451;</FluentSliderLabel>
         <FluentSliderLabel Position="90">90&#8451;</FluentSliderLabel>
@@ -631,6 +631,22 @@
 @code {
     Orientation orientation = Orientation.Horizontal;
     int value3 = 70;
+}
+
+<FluentDivider />
+
+@*
+    // -----------------------------------
+    // Switch
+    // -----------------------------------
+*@
+
+<h2>Switch</h2>
+
+<FluentSwitch @bind-Value=value4></FluentSwitch>
+
+@code {
+    bool value4 = true;
 }
 
 <FluentDivider />
