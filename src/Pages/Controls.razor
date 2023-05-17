@@ -504,8 +504,6 @@
 
 <FluentDivider />
 
-
-
 @*
     // -----------------------------------
     // RadioGroup / Radio
@@ -528,5 +526,19 @@
 }
 
 <FluentDivider />
+
+@*
+    // -----------------------------------
+    // Search
+    // -----------------------------------
+*@
+
+<h2>Search</h2>
+
+<FluentSearch @bind-Value=value>Label</FluentSearch>
+
+@code {
+    string? value;
+}
 
 <br />
