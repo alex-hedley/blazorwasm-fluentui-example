@@ -1,0 +1,73 @@
+@import '_content/Microsoft.Fast.Components.FluentUI/Microsoft.Fast.Components.FluentUI.bundle.scp.css';
+
+/* /Pages/Index.razor.rz.scp.css */
+fluent-card[b-8swmpr0l7n] {
+    --card-height: 400px;
+    --card-width: 500px;
+    padding: 20px;
+    margin: 12px;
+}
+
+.class-override[b-8swmpr0l7n] {
+    height: 163px;
+    width: 300px;
+}
+
+.state-override[b-8swmpr0l7n] {
+    --card-width: 350px;
+    --card-height: 300px;
+    --elevation: 6;
+}
+
+    .state-override:hover[b-8swmpr0l7n] {
+        --elevation: 12;
+    }
+
+.contents[b-8swmpr0l7n] {
+    display: flex;
+    flex-direction: column;
+}
+/* /Shared/NavMenu.razor.rz.scp.css */
+
+.nav-item[b-z1eb77ouvi] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-z1eb77ouvi] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-z1eb77ouvi] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-z1eb77ouvi]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+.nav-item[b-z1eb77ouvi]  a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+}
+
+.nav-item[b-z1eb77ouvi]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-z1eb77ouvi] {
+        display: none;
+    }
+
+    .collapse[b-z1eb77ouvi] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
