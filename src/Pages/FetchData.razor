@@ -14,10 +14,10 @@
 else
 {
     <FluentDataGrid id="manualGrid" RowsData=@forecasts GridTemplateColumns="1fr 1fr 1fr 2fr" TGridItem=WeatherForecast>
-        <PropertyColumn Title="Date" Property="@(c => c.Date)" Sortable="true" Align=Align.Left/>
-        <PropertyColumn Title="Temp. (C)" Property="@(c => c.TemperatureC)" Sortable="true" Align=Align.Center/>
-        <PropertyColumn Title="Temp. (F)" Property="@(c => c.TemperatureF)" Sortable="true" Align=Align.Center/>
-        <PropertyColumn Title="Summary" Property="@(c => c.Summary)" Sortable="true" Align=Align.Right/>
+        <PropertyColumn Title="Date" Property="@(c => c.Date)" Sortable="true" Align=Align.Left />
+        <PropertyColumn Title="Temp. (C)" Property="@(c => c.TemperatureC)" Sortable="true" Align=Align.Center />
+        <PropertyColumn Title="Temp. (F)" Property="@(c => c.TemperatureF)" Sortable="true" Align=Align.Center />
+        <PropertyColumn Title="Summary" Property="@(c => c.Summary)" Sortable="true" Align=Align.Right />
     </FluentDataGrid>
 }
 
@@ -40,3 +40,63 @@ else
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
     }
 }
+
+@* --- *@
+@*
+@inject DataSource Data
+
+<FluentDataGrid RowsData="@FilteredItems" ResizableColumns=true Pagination="@pagination" GridTemplateColumns="0.2fr 1fr 0.2fr 0.2fr 0.2fr 0.2fr" RowClass="@rowClass" style="height: 405px; overflow:auto;">
+    <TemplateColumn Title="Rank" SortBy="@rankSort" Align="Align.Center" InitialSortDirection="SortDirection.Ascending" IsDefaultSortColumn=true>
+        <img class="flag" src="_content/FluentUI.Demo.Shared/flags/@(context.Code).svg" alt="Flag of @(context.Code)" />
+    </TemplateColumn>
+    <PropertyColumn Property="@(c => c.Name)" Sortable="true">
+        <ColumnOptions>
+            <div class="search-box">
+                <FluentSearch type="search" Autofocus=true @bind-Value=nameFilter @oninput="HandleCountryFilter" @onchange="HandleClear" Placeholder="Country name..." />
+            </div>
+        </ColumnOptions>
+    </PropertyColumn>
+    <PropertyColumn Property="@(c => c.Medals.Gold)" Sortable="true" Align="Align.Left" />
+    <PropertyColumn Property="@(c => c.Medals.Silver)" Sortable="true" Align="Align.Center" />
+    <PropertyColumn Property="@(c => c.Medals.Bronze)" Sortable="true" Align="Align.Right" />
+    <PropertyColumn Property="@(c => c.Medals.Total)" Sortable="true" Align="Align.Right" />
+</FluentDataGrid>
+
+
+<FluentPaginator State="@pagination" />
+
+@code {
+    IQueryable<Country>? items;
+    PaginationState pagination = new PaginationState { ItemsPerPage = 10 };
+    string nameFilter = string.Empty;
+
+    GridSort<Country> rankSort = GridSort<Country>
+        .ByDescending(x => x.Medals.Gold)
+        .ThenDescending(x => x.Medals.Silver)
+        .ThenDescending(x => x.Medals.Bronze);
+    Func<Country, string> rowClass = x => x.Name.StartsWith("A") ? "highlighted-row" : string.Empty;
+
+    IQueryable<Country>? FilteredItems => items?.Where(x => x.Name.Contains(nameFilter, StringComparison.CurrentCultureIgnoreCase));
+
+    protected override async Task OnInitializedAsync()
+    {
+        items = (await Data.GetCountriesAsync()).AsQueryable();
+    }
+
+    private void HandleCountryFilter(ChangeEventArgs args)
+    {
+        if (args.Value is string value)
+        {
+            nameFilter = value;
+        }
+    }
+
+    private void HandleClear(ChangeEventArgs args)
+    {
+        if (args is not null && string.IsNullOrWhiteSpace(args.Value?.ToString()))
+        {
+            nameFilter = string.Empty;
+        }
+    }
+}
+*@
