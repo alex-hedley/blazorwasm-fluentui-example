@@ -95,4 +95,10 @@
 		<PackageReference Include="Microsoft.Fast.Components.FluentUI" Version="2.1.*" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Components\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Components\" />
+	</ItemGroup>
 </Project>

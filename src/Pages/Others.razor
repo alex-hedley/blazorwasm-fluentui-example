@@ -1,0 +1,65 @@
+﻿@page "/others"
+
+<PageTitle>Others</PageTitle>
+
+<h1>Others</h1>
+
+@*@namespace BlazorFluentUI.Components*@
+@*@inherits FluentComponentBase*@
+
+@*
+    // -----------------------------------
+    // CounterBadge
+    // -----------------------------------
+*@
+
+<h2>CounterBadge</h2>
+
+<CounterBadge Count="100" Appearance="Appearance.Accent">
+    <FluentButton>
+        <FluentIcon Name="@FluentIcons.Alert" Color="Color.Neutral" />
+    </FluentButton>
+</CounterBadge>
+
+<Spacer Width="25" />
+
+<CounterBadge Count="5" Appearance="Appearance.Neutral">
+    <FluentButton Appearance="Appearance.Accent">
+        <FluentIcon Name="@FluentIcons.Alert" Color="Color.Fill" />
+    </FluentButton>
+</CounterBadge>
+
+<Spacer Width="25" />
+
+<CounterBadge Count="5" Appearance="Appearance.Lightweight">
+    <FluentButton Appearance="Appearance.Accent">
+        <FluentIcon Name="@FluentIcons.Alert" Color="Color.Fill" />
+    </FluentButton>
+</CounterBadge>
+
+<Spacer Width="25" />
+
+<CounterBadge Count="5" Appearance="Appearance.Lightweight" BackgroundColor="Color.Lightweight" Color="Color.Error">
+    <FluentButton Appearance="Appearance.Accent">
+        <FluentIcon Name="@FluentIcons.Alert" Color="Color.Fill" />
+    </FluentButton>
+</CounterBadge>
+
+<Spacer Width="25" />
+
+
+<CounterBadge Count="9" BackgroundColor="@Color.Error" Color="Color.Fill">
+    <FluentButton Appearance="Appearance.Filled">
+        <FluentIcon Name="@FluentIcons.Mail" Color="Color.FillInverse" />
+    </FluentButton>
+</CounterBadge>
+
+<Spacer Width="25" />
+
+<CounterBadge Count="0" Appearance="Appearance.Accent" ShowZero=true>
+    <FluentButton>
+        <FluentIcon Name="@FluentIcons.Alert" Color="Color.Neutral" />
+    </FluentButton>
+</CounterBadge>
+
+<FluentDivider />
